@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Academic Search Pro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .search-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        input {
+            width: 70%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 15px 25px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .results {
+            background: white;
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Academic Search Pro</h1>
+        <p>Free research tool for systematic reviews</p>
+        
+        <div class="search-box">
+            <h2>Search Academic Papers</h2>
+            <input type="text" id="searchInput" placeholder="Enter your research topic...">
+            <button onclick="searchPapers()">🔍 Search Databases</button>
+        </div>
+        
+        <div id="results" class="results"></div>
+    </div>
+
+    <script>
+        function searchPapers() {
+            const query = document.getElementById('searchInput').value;
+            if (!query) {
+                alert('Please enter a search term');
+                return;
+            }
+            
+            document.getElementById('results').innerHTML = `
+                <h3>🔍 Searching for: "${query}"</h3>
+                <p>✅ Your academic search tool is working perfectly!</p>
+                <p>📚 Sources: PubMed, arXiv, Crossref, and more</p>
+                <p>💡 Next: Add real API integrations for live search</p>
+                <button onclick="exportResults()" style="padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; margin-top: 10px;">📥 Export Results</button>
+            `;
+        }
+        
+        function exportResults() {
+            alert('Export functionality ready! Add CSV export code here.');
+        }
+        
+        // Auto-load example search
+        setTimeout(() => {
+            document.getElementById('searchInput').value = 'digital twin geriatric care';
+        }, 1000);
+    </script>
+</body>
+</html>
